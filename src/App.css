@@ -33,12 +33,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: url("https://wallpapercave.com/wp/wp2337006.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  padding: 1%;
+  position: absolute;
   width: 100%;
 }
 
