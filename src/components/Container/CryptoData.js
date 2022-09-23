@@ -43,13 +43,13 @@ const CryptoData = () => {
         </div>
       )}
       <div className="crypto-container">
-        {data.slice(0, 10).map((crypto) => (
-          <div key={crypto.id}>
+        {data.slice(0, 10).map((coin) => (
+          <div key={coin.id}>
             <div>
-              <div className="crypto-title">{crypto.name}</div>
+              <div className="crypto-title">{coin.name}</div>
               <img
-                src={crypto.image.large}
-                alt="crypto_image"
+                src={coin.image.large}
+                alt="coin_image"
                 width="100"
                 height="100"
               />
