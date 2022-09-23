@@ -27,3 +27,34 @@
   color: white;
   text-align: center;
 }
+
+.crypto-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("https://wallpapercave.com/wp/wp2337006.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 1%;
+  width: 100%;
+}
+
+.crypto-container > div {
+  background-color: antiquewhite;
+  opacity: 0.7;
+  text-align: center;
+  margin: 10px;
+  padding: 2em;
+  margin-bottom: 1em;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+
+.crypto-container > div:hover {
+  opacity: 5;
+  cursor: pointer;
+}
