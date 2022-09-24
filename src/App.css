@@ -38,18 +38,29 @@
 }
 
 .crypto-container > div {
-  background-color: antiquewhite;
-  opacity: 0.7;
+  /* background-color: antiquewhite;
   text-align: center;
-  margin: 10px;
+  margin: 1em;
   padding: 2em;
   margin-bottom: 1em;
   width: 220px;
-  height: 220px;
-  border-radius: 50%;
+  height: 220px; */
+  opacity: 0.7;
 }
 
 .crypto-container > div:hover {
   opacity: 5;
   cursor: pointer;
+}
+
+.crypto-link {
+  text-decoration: none;
+  color: #282c34;
+  font-weight: bold;
+}
+
+.crypto-details {
+  margin: 1%;
+  margin-bottom: 10%;
+  text-align: left;
 }

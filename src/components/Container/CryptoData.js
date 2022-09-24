@@ -1,33 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import AuthenticationAPI from '../../services/coinGeckoService'
-import bitcoinLoader from '../../assets/bitcoinLoading.gif'
-
+import React, { useEffect, useState } from 'react';
+import bitcoinLoader from '../../assets/bitcoinLoading.gif';
+import AuthenticationAPI from '../../services/coinGeckoService';
+import BitCoin from '../BitCoin/BitCoin';
 
 const CryptoData = () => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const fetchData = async () => {
-    await fetch(AuthenticationAPI.API_URL())
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let response = await fetch(AuthenticationAPI.API_URL())
+        if (response.status === 200) {
+          let data = await response.json()
           setData(data)
           setLoading(false)
+        } else {
+          throw new Error('Error fetching users list')
         }
-      })
-      .then((result) => {
-        console.log('Success:', result)
-      })
-      .catch((error) => {
-        console.error('Error:', error)
-      })
-  }
-
-  useEffect(() => {
+      } catch (error) {
+        console.log(error)
+      }
+    }
     setTimeout(() => {
       fetchData()
-    }, 3000)
+    }, 1000)
   }, [])
 
   return (
@@ -43,19 +40,10 @@ const CryptoData = () => {
         </div>
       )}
       <div className="crypto-container">
-        {data.slice(0, 10).map((coin) => (
-          <div key={coin.id}>
-            <div>
-              <div className="crypto-title">{coin.name}</div>
-              <img
-                src={coin.image.large}
-                alt="coin_image"
-                width="100"
-                height="100"
-              />
-            </div>
-          </div>
-        ))}
+        {data &&
+          data
+            .slice(0, 10)
+            .map((coin) => <BitCoin key={coin.id} bitcoin={coin} />)}
       </div>
     </div>
   )
