@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import coinBackButton from '../../assets/left-arrow.gif'
 
 const BitCoinDetails = () => {
   const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
   const params = useParams()
   const id = params.id
 
@@ -15,6 +17,7 @@ const BitCoinDetails = () => {
         if (response.status === 200) {
           let data = await response.json()
           setData(data)
+          setLoading(false)
         } else {
           throw new Error('Error fetching users list')
         }
@@ -31,12 +34,14 @@ const BitCoinDetails = () => {
 
   return (
     <div className="crypto-details">
-      <Link to="/">Back home</Link>
+      <Link to="/">
+        <img src={coinBackButton} alt="back_image" width="100" height="100" />
+      </Link>
+      {loading && "Loading... Please wait.."}
       {data && (
         <div>
           <h1>{data.name}</h1>
           <h2>Year of Est : {new Date(data.genesis_date).getFullYear()}</h2>
-
           <img src={data.image.large} alt="coin_image" />
           <p dangerouslySetInnerHTML={createMarkup()} />
         </div>
