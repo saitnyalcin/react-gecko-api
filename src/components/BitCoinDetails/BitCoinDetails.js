@@ -37,12 +37,55 @@ const BitCoinDetails = () => {
       <Link to="/">
         <img src={coinBackButton} alt="back_image" width="100" height="100" />
       </Link>
-      {loading && "Loading... Please wait.."}
+      {loading && 'Loading... Please wait..'}
       {data && (
         <div>
-          <h1>{data.name}</h1>
-          <h2>Year of Est : {new Date(data.genesis_date).getFullYear()}</h2>
-          <img src={data.image.large} alt="coin_image" />
+          <h1>
+            <img src={data.image.thumb} alt="coin_image" /> {data.name}
+          </h1>
+          <h3>
+            {data.tickers.slice(0, 1).map((item) => (
+              <p key={item.coin_id}>
+                Trust rank:
+                {(() => {
+                  if (item.trust_score === 'green')
+                    return (
+                      <span role="img" aria-label="good">
+                        👍 Good
+                      </span>
+                    )
+                  if (item.trust_score === 'yellow')
+                    return (
+                      <span role="img" aria-label="good">
+                        🤝 Fair
+                      </span>
+                    )
+                  if (item.trust_score === 'red')
+                    return (
+                      <span role="img" aria-label="good">
+                        👎 Low
+                      </span>
+                    )
+                  else return <span>Unknown</span>
+                })()}
+              </p>
+            ))}
+          </h3>
+          <h3>
+            {data.links.homepage.slice(0, 1).map((item) => (
+              <a href={item} key={item} target="_blank" rel="noreferrer">
+                {item}
+              </a>
+            ))}
+          </h3>
+          <h3>
+            {data.market_data.current_price.cad.toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'CAD'
+            })}
+          </h3>
+          <h3>Genesis Date: {new Date(data.genesis_date).getFullYear()}</h3>
+          <b>Description:</b>
           <p dangerouslySetInnerHTML={createMarkup()} />
         </div>
       )}
