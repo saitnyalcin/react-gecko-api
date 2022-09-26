@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import coinBackButton from '../../assets/left-arrow.gif'
-import './style.css'
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import coinBackButton from '../../assets/left-arrow.gif';
 
 const BitCoinDetails = () => {
   const [data, setData] = useState(null)

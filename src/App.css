@@ -55,3 +55,92 @@
   margin-bottom: 10%;
   text-align: left;
 }
+
+/* bitcoin details styles */
+
+.crypto-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.crypto-details-container > div {
+  width: 300px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* bitcoin styles */
+
+.crypto {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  min-width: 50px;
+  height: 300px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  margin: 30px;
+}
+
+.crypto-profile-img {
+  height: 50%;
+}
+
+.crypto-description-bk {
+  background-image: linear-gradient(0deg, #3f5efb, #fc466b);
+  border-radius: 30px;
+  position: absolute;
+  top: 45%;
+  left: -6px;
+  height: 65%;
+  width: 108%;
+  transform: skew(19deg, -9deg);
+}
+
+.crypto-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 30%;
+  left: 25px;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+}
+
+.crypto-logo img {
+  height: 100%;
+}
+
+.crypto-description {
+  position: absolute;
+  color: #fff;
+  font-weight: bold;
+  left: 150px;
+  bottom: 25%;
+}
+
+.crypto-btn {
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  bottom: 10%;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+}
+
+.crypto-btn a {
+  color: #fff;
+}
+
+.crypto-symbol {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  bottom: 10%;
+}

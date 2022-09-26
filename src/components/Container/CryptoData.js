@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import bitcoinLoader from '../../assets/bitcoinLoading.gif';
-import AuthenticationAPI from '../../services/coinGeckoService';
-import BitCoin from '../BitCoin/BitCoin';
+import React, { useEffect, useState } from 'react'
+import bitcoinLoader from '../../assets/bitcoinLoading.gif'
+import AuthenticationAPI from '../../services/coinGeckoService'
+import BitCoin from '../BitCoin/BitCoin'
 
 const CryptoData = () => {
   const [data, setData] = useState([])
