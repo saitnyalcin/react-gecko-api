@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import coinBackButton from '../../assets/left-arrow.gif';
+import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import coinBackButton from '../../assets/left-arrow.gif'
 
+// shows the details of selected coin and provides some more information about it
 const BitCoinDetails = () => {
+  // set coin's state to store, control and selected the coins data
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const params = useParams()
   const id = params.id
 
+  // renders the coins details based on the selected coins's id
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -19,7 +22,7 @@ const BitCoinDetails = () => {
           setData(data)
           setLoading(false)
         } else {
-          throw new Error('Error fetching users list')
+          throw new Error('Error fetching crypto currency list')
         }
       } catch (error) {
         console.log(error)
@@ -28,6 +31,7 @@ const BitCoinDetails = () => {
     fetchData()
   }, [id])
 
+  // parse the inner html tags within the text
   function createMarkup() {
     return { __html: data.description.en }
   }

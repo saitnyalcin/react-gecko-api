@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+// coin's profile card to show high-level information regarding the specific coin as props
 const BitCoin = ({ bitcoin }) => {
   return (
     <div>

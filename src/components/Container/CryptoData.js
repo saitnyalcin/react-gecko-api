@@ -3,6 +3,7 @@ import bitcoinLoader from '../../assets/bitcoinLoading.gif'
 import AuthenticationAPI from '../../services/coinGeckoService'
 import BitCoin from '../BitCoin/BitCoin'
 
+// fetches the whole coin's api data to render first 10 coins
 const CryptoData = () => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
@@ -16,7 +17,7 @@ const CryptoData = () => {
           setData(data)
           setLoading(false)
         } else {
-          throw new Error('Error fetching users list')
+          throw new Error('Error fetching crypto currency list')
         }
       } catch (error) {
         console.log(error)
