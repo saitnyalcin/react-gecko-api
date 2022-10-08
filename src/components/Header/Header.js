@@ -1,4 +1,4 @@
-import logo from '../../logo.svg';
+import logo from "../../logo.svg";
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
         <img src={logo} className="App-logo" alt="logo" />
       </a>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
