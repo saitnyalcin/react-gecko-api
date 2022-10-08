@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 // coin's profile card to show high-level information regarding the specific coin as props
 const BitCoin = ({ bitcoin }) => {
@@ -27,7 +28,7 @@ const BitCoin = ({ bitcoin }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BitCoin
+export default BitCoin;

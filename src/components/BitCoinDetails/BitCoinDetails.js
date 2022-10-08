@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import coinBackButton from "../../assets/left-arrow.gif";
 
@@ -86,7 +86,12 @@ const BitCoinDetails = () => {
                 🌎{" "}
               </span>
               {data.links.homepage.slice(0, 1).map((item) => (
-                <a href={item} key={item} target="_blank" rel="noreferrer">
+                <a
+                  href={item}
+                  key={item}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {item}
                 </a>
               ))}
