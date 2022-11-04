@@ -1,7 +1,3 @@
 # React CoinGecko Application
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+<img src="src/assets/gecko-image.png" />
